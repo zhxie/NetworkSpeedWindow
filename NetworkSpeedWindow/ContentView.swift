@@ -51,7 +51,7 @@ struct ContentView: View {
                     .pipify(isPresented: $isPresented) {
                         MonitorView(colorScheme: $colorSchemeBinding, downloadSpeed: $downloadSpeed, uploadSpeed: $uploadSpeed, totalReceived: $totalReceived, totalSent: $totalSent)
                             .frame(width: UIScreen.main.bounds.size.width, height: 30)
-                            .pipControlsStyle(controlsStyle: 1)
+                            .pipControlsStyle(controlsStyle: 2)
                     }
                 }
             }
