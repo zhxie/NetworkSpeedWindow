@@ -1,10 +1,3 @@
-//
-//  SpeedFloatApp.swift
-//  SpeedFloat
-//
-//  Created by 谢之皓 on 2024/11/17.
-//
-
 import SwiftUI
 
 @main
