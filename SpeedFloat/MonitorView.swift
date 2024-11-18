@@ -6,8 +6,8 @@ struct MonitorView: View {
     
     @Binding var downloadSpeed: String
     @Binding var uploadSpeed: String
-    @Binding var totalBytesReceived: String
-    @Binding var totalBytesSent: String
+    @Binding var totalReceived: String
+    @Binding var totalSent: String
     
     var body: some View {
         HStack {
@@ -33,7 +33,7 @@ struct MonitorView: View {
                         Image(systemName: "arrow.down.circle")
                             .foregroundStyle(.tint)
                         Spacer()
-                        Text(totalBytesReceived)
+                        Text(totalReceived)
                             .lineLimit(1)
                             .foregroundStyle(foreground)
                     }
@@ -41,7 +41,7 @@ struct MonitorView: View {
                         Image(systemName: "arrow.up.circle")
                             .foregroundStyle(.tint)
                         Spacer()
-                        Text(totalBytesSent)
+                        Text(totalSent)
                             .lineLimit(1)
                             .foregroundStyle(foreground)
                     }
@@ -62,5 +62,5 @@ struct MonitorView: View {
 }
 
 #Preview {
-    MonitorView(colorScheme: .constant(.light), downloadSpeed: .constant("999.9 TB/s"), uploadSpeed: .constant("999.9 TB/s"), totalBytesReceived: .constant("9999.9 TB"), totalBytesSent: .constant("9999.9 TB"))
+    MonitorView(colorScheme: .constant(.light), downloadSpeed: .constant("999.9 TB/s"), uploadSpeed: .constant("999.9 TB/s"), totalReceived: .constant("9999.9 TB"), totalSent: .constant("9999.9 TB"))
 }

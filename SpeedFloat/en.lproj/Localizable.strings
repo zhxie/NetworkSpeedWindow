@@ -1,0 +1,8 @@
+"network" = "Network";
+"download_speed" = "Download Speed";
+"upload_speed" = "Upload Speed";
+"total_received" = "Total Received";
+"total_sent" = "Total Sent";
+
+"open_picture_in_picture" = "Open Picture-in-Picture";
+"close_picture_in_picture" = "Close Picture-in-Picture";

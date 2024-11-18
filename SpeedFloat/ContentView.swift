@@ -8,8 +8,8 @@ struct ContentView: View {
     
     @State var downloadSpeed: String = "0 B/s"
     @State var uploadSpeed: String = "0 B/s"
-    @State var totalBytesReceived: String = "0 B"
-    @State var totalBytesSent: String = "0 B"
+    @State var totalReceived: String = "0 B"
+    @State var totalSent: String = "0 B"
     @State var isStarted = false
     
     @State var colorSchemeBinding: ColorScheme = .light
@@ -18,38 +18,38 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section("Network") {
+                Section(LocalizedStringKey("network")) {
                     HStack {
-                        Text("Download Speed")
+                        Text(LocalizedStringKey("download_speed"))
                         Spacer()
                         Text(downloadSpeed)
                     }
                     HStack {
-                        Text("Upload Speed")
+                        Text(LocalizedStringKey("upload_speed"))
                         Spacer()
                         Text(uploadSpeed)
                     }
                     HStack {
-                        Text("Total Bytes Received")
+                        Text(LocalizedStringKey("total_received"))
                         Spacer()
-                        Text(totalBytesReceived)
+                        Text(totalReceived)
                     }
                     HStack {
-                        Text("Total Bytes Sent")
+                        Text(LocalizedStringKey("total_sent"))
                         Spacer()
-                        Text(totalBytesSent)
+                        Text(totalSent)
                     }
                 }
                 
                 Section {
-                    Button(isPresented ? "Close Picture-in-Picture" : "Open Picture-in-Picture") {
+                    Button(LocalizedStringKey(isPresented ? "close_picture_in_picture" : "open_picture_in_picture")) {
                         isPresented.toggle()
                     }
                     .onChange(of: colorScheme) {
                             colorSchemeBinding = colorScheme
                     }
                     .pipify(isPresented: $isPresented) {
-                        MonitorView(colorScheme: $colorSchemeBinding, downloadSpeed: $downloadSpeed, uploadSpeed: $uploadSpeed, totalBytesReceived: $totalBytesReceived, totalBytesSent: $totalBytesSent)
+                        MonitorView(colorScheme: $colorSchemeBinding, downloadSpeed: $downloadSpeed, uploadSpeed: $uploadSpeed, totalReceived: $totalReceived, totalSent: $totalSent)
                             .frame(width: UIScreen.main.bounds.size.width, height: 30)
                             .pipControlsStyle(controlsStyle: 1)
                     }
@@ -61,8 +61,8 @@ struct ContentView: View {
                     monitor.startMonitoring { [self] downloadSpeed, uploadSpeed, totalBytesReceived, totalBytesSent in
                         self.downloadSpeed = String(format: "%@/s", formatData(downloadSpeed))
                         self.uploadSpeed = String(format: "%@/s", formatData(uploadSpeed))
-                        self.totalBytesReceived = formatData(Double(totalBytesReceived))
-                        self.totalBytesSent = formatData(Double(totalBytesSent))
+                        self.totalReceived = formatData(Double(totalBytesReceived))
+                        self.totalSent = formatData(Double(totalBytesSent))
                     }
                     isStarted = true
                 }

@@ -1,0 +1,8 @@
+"network" = "网络";
+"download_speed" = "下载速度";
+"upload_speed" = "上传速度";
+"total_received" = "总接收量";
+"total_sent" = "总发送量";
+
+"open_picture_in_picture" = "启动画中画";
+"close_picture_in_picture" = "关闭画中画";
