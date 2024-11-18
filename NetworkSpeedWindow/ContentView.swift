@@ -55,7 +55,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("SpeedFloat")
+            .navigationTitle(LocalizedStringKey("network_speed_window"))
             .onAppear {
                 if !isStarted {
                     monitor.startMonitoring { [self] downloadSpeed, uploadSpeed, totalBytesReceived, totalBytesSent in

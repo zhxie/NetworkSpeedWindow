@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct SpeedFloatApp: App {
+struct NetworkSpeedWindowApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

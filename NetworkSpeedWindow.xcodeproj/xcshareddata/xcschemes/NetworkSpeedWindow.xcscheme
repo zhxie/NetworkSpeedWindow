@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E4399F112CEA26A0004FC4C1"
-               BuildableName = "SpeedFloat.app"
-               BlueprintName = "SpeedFloat"
-               ReferencedContainer = "container:SpeedFloat.xcodeproj">
+               BuildableName = "NetworkSpeedWindow.app"
+               BlueprintName = "NetworkSpeedWindow"
+               ReferencedContainer = "container:NetworkSpeedWindow.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4399F112CEA26A0004FC4C1"
-            BuildableName = "SpeedFloat.app"
-            BlueprintName = "SpeedFloat"
-            ReferencedContainer = "container:SpeedFloat.xcodeproj">
+            BuildableName = "NetworkSpeedWindow.app"
+            BlueprintName = "NetworkSpeedWindow"
+            ReferencedContainer = "container:NetworkSpeedWindow.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4399F112CEA26A0004FC4C1"
-            BuildableName = "SpeedFloat.app"
-            BlueprintName = "SpeedFloat"
-            ReferencedContainer = "container:SpeedFloat.xcodeproj">
+            BuildableName = "NetworkSpeedWindow.app"
+            BlueprintName = "NetworkSpeedWindow"
+            ReferencedContainer = "container:NetworkSpeedWindow.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

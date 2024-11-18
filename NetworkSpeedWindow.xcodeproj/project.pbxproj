@@ -7,30 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E4399F162CEA26A0004FC4C1 /* SpeedFloatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4399F152CEA26A0004FC4C1 /* SpeedFloatApp.swift */; };
+		E4399F162CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4399F152CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift */; };
 		E4399F182CEA26A0004FC4C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4399F172CEA26A0004FC4C1 /* ContentView.swift */; };
 		E4399F1A2CEA26A2004FC4C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4399F192CEA26A2004FC4C1 /* Assets.xcassets */; };
 		E4399F1E2CEA26A2004FC4C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4399F1D2CEA26A2004FC4C1 /* Preview Assets.xcassets */; };
 		E4399F252CEA282A004FC4C1 /* NetworkSpeedMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4399F242CEA282A004FC4C1 /* NetworkSpeedMonitor.swift */; };
 		E4399F2B2CEAF3A9004FC4C1 /* MonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4399F2A2CEAF3A9004FC4C1 /* MonitorView.swift */; };
-		E4399F302CEB31D0004FC4C1 /* swiftui-pipify in Resources */ = {isa = PBXBuildFile; fileRef = E4399F2F2CEB31D0004FC4C1 /* swiftui-pipify */; };
-		E4399F332CEB31F2004FC4C1 /* Pipify in Frameworks */ = {isa = PBXBuildFile; productRef = E4399F322CEB31F2004FC4C1 /* Pipify */; };
 		E4399F362CEB3652004FC4C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4399F342CEB3652004FC4C1 /* Localizable.strings */; };
+		E480AD3E2CEB3BCE00FD21E4 /* swiftui-pipify in Resources */ = {isa = PBXBuildFile; fileRef = E480AD3D2CEB3BCE00FD21E4 /* swiftui-pipify */; };
+		E480AD402CEB3BDA00FD21E4 /* Pipify in Frameworks */ = {isa = PBXBuildFile; productRef = E480AD3F2CEB3BDA00FD21E4 /* Pipify */; };
+		E480AD432CEB3C1300FD21E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E480AD412CEB3C1300FD21E4 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E4399F122CEA26A0004FC4C1 /* SpeedFloat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedFloat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4399F152CEA26A0004FC4C1 /* SpeedFloatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedFloatApp.swift; sourceTree = "<group>"; };
+		E4399F122CEA26A0004FC4C1 /* NetworkSpeedWindow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkSpeedWindow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4399F152CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpeedWindowApp.swift; sourceTree = "<group>"; };
 		E4399F172CEA26A0004FC4C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E4399F192CEA26A2004FC4C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E4399F1B2CEA26A2004FC4C1 /* SpeedFloat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeedFloat.entitlements; sourceTree = "<group>"; };
 		E4399F1D2CEA26A2004FC4C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4399F242CEA282A004FC4C1 /* NetworkSpeedMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpeedMonitor.swift; sourceTree = "<group>"; };
 		E4399F262CEA439B004FC4C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E4399F2A2CEAF3A9004FC4C1 /* MonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorView.swift; sourceTree = "<group>"; };
-		E4399F2F2CEB31D0004FC4C1 /* swiftui-pipify */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "swiftui-pipify"; sourceTree = "<group>"; };
 		E4399F352CEB3652004FC4C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E4399F372CEB371D004FC4C1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E480AD3D2CEB3BCE00FD21E4 /* swiftui-pipify */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "swiftui-pipify"; sourceTree = "<group>"; };
+		E480AD422CEB3C1300FD21E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E480AD442CEB3C1F00FD21E4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4399F332CEB31F2004FC4C1 /* Pipify in Frameworks */,
+				E480AD402CEB3BDA00FD21E4 /* Pipify in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,8 +50,8 @@
 		E4399F092CEA26A0004FC4C1 = {
 			isa = PBXGroup;
 			children = (
-				E4399F142CEA26A0004FC4C1 /* SpeedFloat */,
-				E4399F2F2CEB31D0004FC4C1 /* swiftui-pipify */,
+				E4399F142CEA26A0004FC4C1 /* NetworkSpeedWindow */,
+				E480AD3D2CEB3BCE00FD21E4 /* swiftui-pipify */,
 				E4399F132CEA26A0004FC4C1 /* Products */,
 				E4399F312CEB31F2004FC4C1 /* Frameworks */,
 			);
@@ -58,25 +60,25 @@
 		E4399F132CEA26A0004FC4C1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4399F122CEA26A0004FC4C1 /* SpeedFloat.app */,
+				E4399F122CEA26A0004FC4C1 /* NetworkSpeedWindow.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E4399F142CEA26A0004FC4C1 /* SpeedFloat */ = {
+		E4399F142CEA26A0004FC4C1 /* NetworkSpeedWindow */ = {
 			isa = PBXGroup;
 			children = (
 				E4399F242CEA282A004FC4C1 /* NetworkSpeedMonitor.swift */,
-				E4399F152CEA26A0004FC4C1 /* SpeedFloatApp.swift */,
+				E4399F152CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift */,
 				E4399F172CEA26A0004FC4C1 /* ContentView.swift */,
 				E4399F2A2CEAF3A9004FC4C1 /* MonitorView.swift */,
 				E4399F192CEA26A2004FC4C1 /* Assets.xcassets */,
-				E4399F1B2CEA26A2004FC4C1 /* SpeedFloat.entitlements */,
 				E4399F262CEA439B004FC4C1 /* Info.plist */,
 				E4399F1C2CEA26A2004FC4C1 /* Preview Content */,
 				E4399F342CEB3652004FC4C1 /* Localizable.strings */,
+				E480AD412CEB3C1300FD21E4 /* InfoPlist.strings */,
 			);
-			path = SpeedFloat;
+			path = NetworkSpeedWindow;
 			sourceTree = "<group>";
 		};
 		E4399F1C2CEA26A2004FC4C1 /* Preview Content */ = {
@@ -97,9 +99,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4399F112CEA26A0004FC4C1 /* SpeedFloat */ = {
+		E4399F112CEA26A0004FC4C1 /* NetworkSpeedWindow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4399F212CEA26A2004FC4C1 /* Build configuration list for PBXNativeTarget "SpeedFloat" */;
+			buildConfigurationList = E4399F212CEA26A2004FC4C1 /* Build configuration list for PBXNativeTarget "NetworkSpeedWindow" */;
 			buildPhases = (
 				E4399F0E2CEA26A0004FC4C1 /* Sources */,
 				E4399F0F2CEA26A0004FC4C1 /* Frameworks */,
@@ -109,12 +111,12 @@
 			);
 			dependencies = (
 			);
-			name = SpeedFloat;
+			name = NetworkSpeedWindow;
 			packageProductDependencies = (
-				E4399F322CEB31F2004FC4C1 /* Pipify */,
+				E480AD3F2CEB3BDA00FD21E4 /* Pipify */,
 			);
-			productName = SpeedFloat;
-			productReference = E4399F122CEA26A0004FC4C1 /* SpeedFloat.app */;
+			productName = NetworkSpeedWindow;
+			productReference = E4399F122CEA26A0004FC4C1 /* NetworkSpeedWindow.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -132,7 +134,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E4399F0D2CEA26A0004FC4C1 /* Build configuration list for PBXProject "SpeedFloat" */;
+			buildConfigurationList = E4399F0D2CEA26A0004FC4C1 /* Build configuration list for PBXProject "NetworkSpeedWindow" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -148,7 +150,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E4399F112CEA26A0004FC4C1 /* SpeedFloat */,
+				E4399F112CEA26A0004FC4C1 /* NetworkSpeedWindow */,
 			);
 		};
 /* End PBXProject section */
@@ -160,8 +162,9 @@
 			files = (
 				E4399F1E2CEA26A2004FC4C1 /* Preview Assets.xcassets in Resources */,
 				E4399F362CEB3652004FC4C1 /* Localizable.strings in Resources */,
-				E4399F302CEB31D0004FC4C1 /* swiftui-pipify in Resources */,
 				E4399F1A2CEA26A2004FC4C1 /* Assets.xcassets in Resources */,
+				E480AD3E2CEB3BCE00FD21E4 /* swiftui-pipify in Resources */,
+				E480AD432CEB3C1300FD21E4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +177,7 @@
 			files = (
 				E4399F252CEA282A004FC4C1 /* NetworkSpeedMonitor.swift in Sources */,
 				E4399F182CEA26A0004FC4C1 /* ContentView.swift in Sources */,
-				E4399F162CEA26A0004FC4C1 /* SpeedFloatApp.swift in Sources */,
+				E4399F162CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift in Sources */,
 				E4399F2B2CEAF3A9004FC4C1 /* MonitorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +192,15 @@
 				E4399F372CEB371D004FC4C1 /* zh-Hans */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		E480AD412CEB3C1300FD21E4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E480AD422CEB3C1300FD21E4 /* en */,
+				E480AD442CEB3C1F00FD21E4 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -315,15 +327,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SpeedFloat/SpeedFloat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SpeedFloat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"NetworkSpeedWindow/Preview Content\"";
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpeedFloat/Info.plist;
+				INFOPLIST_FILE = NetworkSpeedWindow/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -340,7 +351,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.SpeedFloat;
+				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.NetworkSpeedWindow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -356,15 +367,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SpeedFloat/SpeedFloat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SpeedFloat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"NetworkSpeedWindow/Preview Content\"";
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpeedFloat/Info.plist;
+				INFOPLIST_FILE = NetworkSpeedWindow/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -381,7 +391,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.SpeedFloat;
+				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.NetworkSpeedWindow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -395,7 +405,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4399F0D2CEA26A0004FC4C1 /* Build configuration list for PBXProject "SpeedFloat" */ = {
+		E4399F0D2CEA26A0004FC4C1 /* Build configuration list for PBXProject "NetworkSpeedWindow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4399F1F2CEA26A2004FC4C1 /* Debug */,
@@ -404,7 +414,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4399F212CEA26A2004FC4C1 /* Build configuration list for PBXNativeTarget "SpeedFloat" */ = {
+		E4399F212CEA26A2004FC4C1 /* Build configuration list for PBXNativeTarget "NetworkSpeedWindow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4399F222CEA26A2004FC4C1 /* Debug */,
@@ -416,7 +426,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E4399F322CEB31F2004FC4C1 /* Pipify */ = {
+		E480AD3F2CEB3BDA00FD21E4 /* Pipify */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Pipify;
 		};
