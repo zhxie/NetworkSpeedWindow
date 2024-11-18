@@ -68,7 +68,7 @@ struct ContentView: View {
                     .onAppear {
                         colorSchemeBinding = colorScheme
                     }
-                    .onChange(of: colorScheme) {
+                    .onChange(of: colorScheme) { colorScheme in
                         colorSchemeBinding = colorScheme
                     }
                 }
