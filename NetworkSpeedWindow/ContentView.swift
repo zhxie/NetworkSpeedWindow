@@ -45,13 +45,16 @@ struct ContentView: View {
                     Button(LocalizedStringKey(isPresented ? "close_picture_in_picture" : "open_picture_in_picture")) {
                         isPresented.toggle()
                     }
-                    .onChange(of: colorScheme) {
-                            colorSchemeBinding = colorScheme
-                    }
                     .pipify(isPresented: $isPresented) {
                         MonitorView(colorScheme: $colorSchemeBinding, downloadSpeed: $downloadSpeed, uploadSpeed: $uploadSpeed, totalReceived: $totalReceived, totalSent: $totalSent)
                             .frame(width: UIScreen.main.bounds.size.width, height: 30)
                             .pipControlsStyle(controlsStyle: 2)
+                    }
+                    .onAppear {
+                        colorSchemeBinding = colorScheme
+                    }
+                    .onChange(of: colorScheme) {
+                        colorSchemeBinding = colorScheme
                     }
                 }
             }
