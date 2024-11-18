@@ -184,6 +184,7 @@ public final class PipifyController: NSObject, ObservableObject, AVPictureInPict
 
     public func pictureInPictureControllerDidStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         logger.info("didStart")
+        enabled = true
     }
     
     public func pictureInPictureControllerDidStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
