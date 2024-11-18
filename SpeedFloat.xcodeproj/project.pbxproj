@@ -12,8 +12,9 @@
 		E4399F1A2CEA26A2004FC4C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4399F192CEA26A2004FC4C1 /* Assets.xcassets */; };
 		E4399F1E2CEA26A2004FC4C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4399F1D2CEA26A2004FC4C1 /* Preview Assets.xcassets */; };
 		E4399F252CEA282A004FC4C1 /* NetworkSpeedMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4399F242CEA282A004FC4C1 /* NetworkSpeedMonitor.swift */; };
-		E4399F292CEA44F6004FC4C1 /* Pipify in Frameworks */ = {isa = PBXBuildFile; productRef = E4399F282CEA44F6004FC4C1 /* Pipify */; };
 		E4399F2B2CEAF3A9004FC4C1 /* MonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4399F2A2CEAF3A9004FC4C1 /* MonitorView.swift */; };
+		E4399F302CEB31D0004FC4C1 /* swiftui-pipify in Resources */ = {isa = PBXBuildFile; fileRef = E4399F2F2CEB31D0004FC4C1 /* swiftui-pipify */; };
+		E4399F332CEB31F2004FC4C1 /* Pipify in Frameworks */ = {isa = PBXBuildFile; productRef = E4399F322CEB31F2004FC4C1 /* Pipify */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E4399F242CEA282A004FC4C1 /* NetworkSpeedMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpeedMonitor.swift; sourceTree = "<group>"; };
 		E4399F262CEA439B004FC4C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E4399F2A2CEAF3A9004FC4C1 /* MonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorView.swift; sourceTree = "<group>"; };
+		E4399F2F2CEB31D0004FC4C1 /* swiftui-pipify */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "swiftui-pipify"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4399F292CEA44F6004FC4C1 /* Pipify in Frameworks */,
+				E4399F332CEB31F2004FC4C1 /* Pipify in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,7 +46,9 @@
 			isa = PBXGroup;
 			children = (
 				E4399F142CEA26A0004FC4C1 /* SpeedFloat */,
+				E4399F2F2CEB31D0004FC4C1 /* swiftui-pipify */,
 				E4399F132CEA26A0004FC4C1 /* Products */,
+				E4399F312CEB31F2004FC4C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +83,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E4399F312CEB31F2004FC4C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,7 +107,7 @@
 			);
 			name = SpeedFloat;
 			packageProductDependencies = (
-				E4399F282CEA44F6004FC4C1 /* Pipify */,
+				E4399F322CEB31F2004FC4C1 /* Pipify */,
 			);
 			productName = SpeedFloat;
 			productReference = E4399F122CEA26A0004FC4C1 /* SpeedFloat.app */;
@@ -127,7 +138,6 @@
 			);
 			mainGroup = E4399F092CEA26A0004FC4C1;
 			packageReferences = (
-				E4399F272CEA44F6004FC4C1 /* XCRemoteSwiftPackageReference "swiftui-pipify" */,
 			);
 			productRefGroup = E4399F132CEA26A0004FC4C1 /* Products */;
 			projectDirPath = "";
@@ -144,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4399F1E2CEA26A2004FC4C1 /* Preview Assets.xcassets in Resources */,
+				E4399F302CEB31D0004FC4C1 /* swiftui-pipify in Resources */,
 				E4399F1A2CEA26A2004FC4C1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,21 +395,9 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		E4399F272CEA44F6004FC4C1 /* XCRemoteSwiftPackageReference "swiftui-pipify" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/getsidetrack/swiftui-pipify.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		E4399F282CEA44F6004FC4C1 /* Pipify */ = {
+		E4399F322CEB31F2004FC4C1 /* Pipify */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E4399F272CEA44F6004FC4C1 /* XCRemoteSwiftPackageReference "swiftui-pipify" */;
 			productName = Pipify;
 		};
 /* End XCSwiftPackageProductDependency section */
