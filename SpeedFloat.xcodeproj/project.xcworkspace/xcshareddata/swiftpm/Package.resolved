@@ -1,0 +1,15 @@
+{
+  "originHash" : "cf0bd8df24d4290caaf8a5d73756ce866c2225ebebff791e4f7c98c0ec0838d6",
+  "pins" : [
+    {
+      "identity" : "swiftui-pipify",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/getsidetrack/swiftui-pipify.git",
+      "state" : {
+        "revision" : "e35dced4771bb538d27d3a63361bca2f0ed56930",
+        "version" : "0.4.0"
+      }
+    }
+  ],
+  "version" : 3
+}

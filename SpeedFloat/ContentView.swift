@@ -1,3 +1,4 @@
+import Pipify
 import SwiftUI
 
 struct ContentView: View {
@@ -8,6 +9,8 @@ struct ContentView: View {
     @State var totalBytesReceived: Int = 0
     @State var totalBytesSent: Int = 0
     @State var isStarted = false
+    
+    @State var isPresented = false
     
     var body: some View {
         HStack {
@@ -42,14 +45,17 @@ struct ContentView: View {
             }
         }
         .padding()
+        .pipify(isPresented: $isPresented)
         
         Button {
             if isStarted {
                 stopMonitoring()
                 isStarted = false
+                isPresented = false
             } else {
                 startMonitoring()
                 isStarted = true
+                isPresented = true
             }
         } label: {
             Image(systemName: isStarted ? "stop.circle" : "play.circle")
