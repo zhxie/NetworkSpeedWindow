@@ -6,5 +6,9 @@
 "total_received" = "Total Received";
 "total_sent" = "Total Sent";
 
+"interface" = "Interface";
+"ethernet" = "Ethernet";
+"cellular" = "Cellular";
+
 "open_picture_in_picture" = "Open Picture-in-Picture";
 "close_picture_in_picture" = "Close Picture-in-Picture";

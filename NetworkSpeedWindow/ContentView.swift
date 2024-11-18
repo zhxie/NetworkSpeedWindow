@@ -10,6 +10,8 @@ struct ContentView: View {
     @State var uploadSpeed: String = "0 B/s"
     @State var totalReceived: String = "0 B"
     @State var totalSent: String = "0 B"
+    @State var ethernet: String = "0 B"
+    @State var cellular: String = "0 B"
     @State var isStarted = false
     
     @State var colorSchemeBinding: ColorScheme = .light
@@ -41,6 +43,19 @@ struct ContentView: View {
                     }
                 }
                 
+                Section(LocalizedStringKey("interface")) {
+                    HStack {
+                        Text(LocalizedStringKey("ethernet"))
+                        Spacer()
+                        Text(ethernet)
+                    }
+                    HStack {
+                        Text(LocalizedStringKey("cellular"))
+                        Spacer()
+                        Text(cellular)
+                    }
+                }
+                
                 Section {
                     Button(LocalizedStringKey(isPresented ? "close_picture_in_picture" : "open_picture_in_picture")) {
                         isPresented.toggle()
@@ -61,11 +76,13 @@ struct ContentView: View {
             .navigationTitle(LocalizedStringKey("network_speed_window"))
             .onAppear {
                 if !isStarted {
-                    monitor.startMonitoring { [self] downloadSpeed, uploadSpeed, totalBytesReceived, totalBytesSent in
+                    monitor.startMonitoring { [self] downloadSpeed, uploadSpeed, totalReceived, totalSent, ethernet, cellular in
                         self.downloadSpeed = String(format: "%@/s", formatData(downloadSpeed))
                         self.uploadSpeed = String(format: "%@/s", formatData(uploadSpeed))
-                        self.totalReceived = formatData(Double(totalBytesReceived))
-                        self.totalSent = formatData(Double(totalBytesSent))
+                        self.totalReceived = formatData(Double(totalReceived))
+                        self.totalSent = formatData(Double(totalSent))
+                        self.ethernet = formatData(Double(ethernet))
+                        self.cellular = formatData(Double(cellular))
                     }
                     isStarted = true
                 }

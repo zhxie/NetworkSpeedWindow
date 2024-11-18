@@ -6,5 +6,9 @@
 "total_received" = "总接收量";
 "total_sent" = "总发送量";
 
+"interface" = "接口";
+"ethernet" = "以太网";
+"cellular" = "蜂窝网络";
+
 "open_picture_in_picture" = "启动画中画";
 "close_picture_in_picture" = "关闭画中画";
