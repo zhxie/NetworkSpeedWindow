@@ -74,23 +74,27 @@ struct ContentView: View {
     }
     
     func formatData(_ data: Double) -> String {
-        if (data >= 1024 * 1024 * 1024 * 1024) {
+        if data >= 1024 * 1024 * 1024 * 1024 {
             // TB.
-            return String(format: "%.1f TB", data / 1024 / 1024 / 1024 / 1024)
+            let tb = data / 1024 / 1024 / 1024 / 1024
+            return String(format: "%.1f TB", tb)
         }
-        if (data >= 1024 * 1024 * 1024) {
+        if data >= 1024 * 1024 * 1024 {
             // GB.
-            return String(format: "%.1f GB", data / 1024 / 1024 / 1024)
+            let gb = data / 1024 / 1024 / 1024
+            return String(format: "%.1f GB", gb)
         }
-        if (data >= 1024 * 1024) {
+        if data >= 1024 * 1024 {
             // MB.
-            return String(format: "%.1f MB", data / 1024 / 1024)
+            let mb = data / 1024 / 1024
+            return String(format: "%.1f MB", mb)
         }
-        if (data >= 1024) {
+        if data >= 1024 {
             // kB.
-            return String(format: "%.1f kB", data / 1024)
+            let kb = data / 1024
+            return String(format: "%d kB", Int(kb))
         }
-        return String(format: "%d B", data)
+        return String(format: "%d B", Int(data))
     }
 }
 
