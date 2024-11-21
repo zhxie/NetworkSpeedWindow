@@ -3,17 +3,17 @@ import Network
 import SystemConfiguration
 
 class NetworkSpeedMonitor {
-    var previousEthernetReceived: Int = 0
-    var previousEthernetSent: Int = 0
-    var previousCellularReceived: Int = 0
-    var previousCellularSent: Int = 0
-    var totalEthernetReceived: Int = 0
-    var totalEthernetSent: Int = 0
-    var totalCellularReceived: Int = 0
-    var totalCellularSent: Int = 0
+    var previousEthernetReceived: UInt32 = 0
+    var previousEthernetSent: UInt32 = 0
+    var previousCellularReceived: UInt32 = 0
+    var previousCellularSent: UInt32 = 0
+    var totalEthernetReceived: UInt64 = 0
+    var totalEthernetSent: UInt64 = 0
+    var totalCellularReceived: UInt64 = 0
+    var totalCellularSent: UInt64 = 0
     var timer: Timer?
 
-    func startMonitoring(interval: TimeInterval = 1.0, update: @escaping (_ downloadSpeed: Double, _ uploadSpeed: Double, _ totalReceived: Int, _ totalSent: Int, _ ethernet: Int, _ cellular: Int) -> Void) {
+    func startMonitoring(interval: TimeInterval = 1.0, update: @escaping (_ downloadSpeed: Double, _ uploadSpeed: Double, _ totalReceived: UInt64, _ totalSent: UInt64, _ ethernet: UInt64, _ cellular: UInt64) -> Void) {
         let data = getData()
         previousEthernetReceived = data.ethernetReceived
         previousEthernetSent = data.ethernetSent
@@ -33,10 +33,10 @@ class NetworkSpeedMonitor {
             
             let downloadSpeed = Double(ethernetReceived + cellularReceived) / interval
             let uploadSpeed = Double(ethernetSent + cellularSent) / interval
-            totalEthernetReceived = totalEthernetReceived + ethernetReceived
-            totalEthernetSent = totalEthernetSent + ethernetSent
-            totalCellularReceived = totalCellularReceived + cellularReceived
-            totalCellularSent = totalCellularSent + cellularSent
+            totalEthernetReceived = totalEthernetReceived + UInt64(ethernetReceived)
+            totalEthernetSent = totalEthernetSent + UInt64(ethernetSent)
+            totalCellularReceived = totalCellularReceived + UInt64(cellularReceived)
+            totalCellularSent = totalCellularSent + UInt64(cellularSent)
 
             previousEthernetReceived = data.ethernetReceived
             previousEthernetSent = data.ethernetSent
@@ -60,16 +60,16 @@ class NetworkSpeedMonitor {
         totalCellularSent = 0
     }
 
-    func getData() -> (ethernetReceived: Int, ethernetSent: Int, cellularReceived: Int, cellularSent: Int) {
+    func getData() -> (ethernetReceived: UInt32, ethernetSent: UInt32, cellularReceived: UInt32, cellularSent: UInt32) {
         var ifaddrsPointer: UnsafeMutablePointer<ifaddrs>? = nil
         guard getifaddrs(&ifaddrsPointer) == 0, let firstAddress = ifaddrsPointer else {
             return (0, 0, 0, 0)
         }
 
-        var ethernetReceived = 0
-        var ethernetSent = 0
-        var cellularReceived = 0
-        var cellularSent = 0
+        var ethernetReceived: UInt32 = 0
+        var ethernetSent: UInt32 = 0
+        var cellularReceived: UInt32 = 0
+        var cellularSent: UInt32 = 0
 
         for ifaddr in sequence(first: firstAddress, next: { $0.pointee.ifa_next }) {
             let flags = Int32(ifaddr.pointee.ifa_flags)
@@ -82,11 +82,11 @@ class NetworkSpeedMonitor {
                 }
                 
                 if name.hasPrefix("en") {
-                    ethernetReceived += Int(data.pointee.ifi_ibytes)
-                    ethernetSent += Int(data.pointee.ifi_obytes)
+                    ethernetReceived += data.pointee.ifi_ibytes
+                    ethernetSent += data.pointee.ifi_obytes
                 } else if name.hasPrefix("pdp_ip") {
-                    cellularReceived += Int(data.pointee.ifi_ibytes)
-                    cellularSent += Int(data.pointee.ifi_obytes)
+                    cellularReceived += data.pointee.ifi_ibytes
+                    cellularSent += data.pointee.ifi_obytes
                 }
             }
         }
