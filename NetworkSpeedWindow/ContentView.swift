@@ -45,7 +45,7 @@ struct ContentView: View {
                 
                 Section(LocalizedStringKey("interface")) {
                     HStack {
-                        Text(LocalizedStringKey("ethernet"))
+                        Text(LocalizedStringKey("wi_fi_ethernet"))
                         Spacer()
                         Text(ethernet)
                     }

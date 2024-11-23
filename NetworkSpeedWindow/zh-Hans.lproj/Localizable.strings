@@ -7,7 +7,7 @@
 "total_sent" = "总发送量";
 
 "interface" = "接口";
-"ethernet" = "以太网";
+"wi_fi_ethernet" = "无线局域网/以太网";
 "cellular" = "蜂窝网络";
 
 "open_picture_in_picture" = "启动画中画";

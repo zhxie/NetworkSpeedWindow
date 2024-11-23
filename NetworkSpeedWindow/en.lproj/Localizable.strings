@@ -7,7 +7,7 @@
 "total_sent" = "Total Sent";
 
 "interface" = "Interface";
-"ethernet" = "Ethernet";
+"wi_fi_ethernet" = "Wi-Fi/Ethernet";
 "cellular" = "Cellular";
 
 "open_picture_in_picture" = "Open Picture-in-Picture";
