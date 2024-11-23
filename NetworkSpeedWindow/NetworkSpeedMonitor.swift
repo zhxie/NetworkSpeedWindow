@@ -14,11 +14,7 @@ class NetworkSpeedMonitor {
     var timer: Timer?
 
     func startMonitoring(interval: TimeInterval = 1.0, update: @escaping (_ downloadSpeed: Double, _ uploadSpeed: Double, _ totalReceived: UInt64, _ totalSent: UInt64, _ ethernet: UInt64, _ cellular: UInt64) -> Void) {
-        let data = getData()
-        previousEthernetReceived = data.ethernetReceived
-        previousEthernetSent = data.ethernetSent
-        previousCellularReceived = data.cellularReceived
-        previousCellularSent = data.cellularSent
+        reset()
         
         self.timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { [weak self] _ in
             guard let self = self else {
@@ -54,6 +50,19 @@ class NetworkSpeedMonitor {
         previousEthernetSent = 0
         previousCellularReceived = 0
         previousCellularSent = 0
+        totalEthernetReceived = 0
+        totalEthernetSent = 0
+        totalCellularReceived = 0
+        totalCellularSent = 0
+    }
+    
+    func reset() {
+        let data = getData()
+        previousEthernetReceived = data.ethernetReceived
+        previousEthernetSent = data.ethernetSent
+        previousCellularReceived = data.cellularReceived
+        previousCellularSent = data.cellularSent
+        
         totalEthernetReceived = 0
         totalEthernetSent = 0
         totalCellularReceived = 0

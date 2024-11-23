@@ -65,16 +65,20 @@ struct ContentView: View {
                             .frame(width: UIScreen.main.bounds.size.width, height: 30)
                             .pipControlsStyle(controlsStyle: 2)
                     }
-                    .onAppear {
-                        colorSchemeBinding = colorScheme
-                    }
-                    .onChange(of: colorScheme) { colorScheme in
-                        colorSchemeBinding = colorScheme
+                    Button(LocalizedStringKey("reset")) {
+                        monitor.reset()
+                        downloadSpeed = String(format: "%@/s", formatData(0))
+                        uploadSpeed = String(format: "%@/s", formatData(0))
+                        totalReceived = formatData(0)
+                        totalSent = formatData(0)
+                        ethernet = formatData(0)
+                        cellular = formatData(0)
                     }
                 }
             }
             .navigationTitle(LocalizedStringKey("network_speed_window"))
             .onAppear {
+                colorSchemeBinding = colorScheme
                 if !isStarted {
                     monitor.startMonitoring { [self] downloadSpeed, uploadSpeed, totalReceived, totalSent, ethernet, cellular in
                         self.downloadSpeed = String(format: "%@/s", formatData(downloadSpeed))
@@ -86,6 +90,9 @@ struct ContentView: View {
                     }
                     isStarted = true
                 }
+            }
+            .onChange(of: colorScheme) { colorScheme in
+                colorSchemeBinding = colorScheme
             }
         }
     }
