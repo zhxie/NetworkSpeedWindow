@@ -51,6 +51,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E41835A82CF1C37F007215E3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E4399F2A2CEAF3A9004FC4C1 /* MonitorView.swift */,
+				E41835A62CF1C1AA007215E3 /* SafariView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E41835A92CF1C397007215E3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E4399F242CEA282A004FC4C1 /* NetworkSpeedMonitor.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		E4399F092CEA26A0004FC4C1 = {
 			isa = PBXGroup;
 			children = (
@@ -72,12 +89,11 @@
 		E4399F142CEA26A0004FC4C1 /* NetworkSpeedWindow */ = {
 			isa = PBXGroup;
 			children = (
-				E4399F242CEA282A004FC4C1 /* NetworkSpeedMonitor.swift */,
+				E41835A92CF1C397007215E3 /* Utils */,
+				E41835A82CF1C37F007215E3 /* Views */,
 				E4399F152CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift */,
 				E4399F172CEA26A0004FC4C1 /* ContentView.swift */,
 				E41835A42CF1C0FB007215E3 /* AboutView.swift */,
-				E4399F2A2CEAF3A9004FC4C1 /* MonitorView.swift */,
-				E41835A62CF1C1AA007215E3 /* SafariView.swift */,
 				E4399F192CEA26A2004FC4C1 /* Assets.xcassets */,
 				E4399F262CEA439B004FC4C1 /* Info.plist */,
 				E4399F1C2CEA26A2004FC4C1 /* Preview Content */,
