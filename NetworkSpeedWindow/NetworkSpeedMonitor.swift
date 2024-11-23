@@ -26,10 +26,10 @@ class NetworkSpeedMonitor {
             }
             
             let data = self.getData()
-            let ethernetReceived = data.ethernetReceived - self.previousEthernetReceived
-            let ethernetSent = data.ethernetSent - self.previousEthernetSent
-            let cellularReceived = data.cellularReceived - self.previousCellularReceived
-            let cellularSent = data.cellularSent - self.previousCellularSent
+            let ethernetReceived = data.ethernetReceived &- self.previousEthernetReceived
+            let ethernetSent = data.ethernetSent &- self.previousEthernetSent
+            let cellularReceived = data.cellularReceived &- self.previousCellularReceived
+            let cellularSent = data.cellularSent &- self.previousCellularSent
             
             let downloadSpeed = Double(ethernetReceived + cellularReceived) / interval
             let uploadSpeed = Double(ethernetSent + cellularSent) / interval
@@ -82,11 +82,11 @@ class NetworkSpeedMonitor {
                 }
                 
                 if name.hasPrefix("en") {
-                    ethernetReceived += data.pointee.ifi_ibytes
-                    ethernetSent += data.pointee.ifi_obytes
+                    ethernetReceived &+= data.pointee.ifi_ibytes
+                    ethernetSent &+= data.pointee.ifi_obytes
                 } else if name.hasPrefix("pdp_ip") {
-                    cellularReceived += data.pointee.ifi_ibytes
-                    cellularSent += data.pointee.ifi_obytes
+                    cellularReceived &+= data.pointee.ifi_ibytes
+                    cellularSent &+= data.pointee.ifi_obytes
                 }
             }
         }
