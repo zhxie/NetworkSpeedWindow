@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E41835A52CF1C0FB007215E3 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41835A42CF1C0FB007215E3 /* AboutView.swift */; };
+		E41835A72CF1C1AA007215E3 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41835A62CF1C1AA007215E3 /* SafariView.swift */; };
 		E4399F162CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4399F152CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift */; };
 		E4399F182CEA26A0004FC4C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4399F172CEA26A0004FC4C1 /* ContentView.swift */; };
 		E4399F1A2CEA26A2004FC4C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4399F192CEA26A2004FC4C1 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E41835A42CF1C0FB007215E3 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		E41835A62CF1C1AA007215E3 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		E4399F122CEA26A0004FC4C1 /* NetworkSpeedWindow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkSpeedWindow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4399F152CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpeedWindowApp.swift; sourceTree = "<group>"; };
 		E4399F172CEA26A0004FC4C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,7 +75,9 @@
 				E4399F242CEA282A004FC4C1 /* NetworkSpeedMonitor.swift */,
 				E4399F152CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift */,
 				E4399F172CEA26A0004FC4C1 /* ContentView.swift */,
+				E41835A42CF1C0FB007215E3 /* AboutView.swift */,
 				E4399F2A2CEAF3A9004FC4C1 /* MonitorView.swift */,
+				E41835A62CF1C1AA007215E3 /* SafariView.swift */,
 				E4399F192CEA26A2004FC4C1 /* Assets.xcassets */,
 				E4399F262CEA439B004FC4C1 /* Info.plist */,
 				E4399F1C2CEA26A2004FC4C1 /* Preview Content */,
@@ -179,6 +185,8 @@
 				E4399F182CEA26A0004FC4C1 /* ContentView.swift in Sources */,
 				E4399F162CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift in Sources */,
 				E4399F2B2CEAF3A9004FC4C1 /* MonitorView.swift in Sources */,
+				E41835A72CF1C1AA007215E3 /* SafariView.swift in Sources */,
+				E41835A52CF1C0FB007215E3 /* AboutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,9 @@ struct ContentView: View {
     @State var isStarted = false
     
     @State var colorSchemeBinding: ColorScheme = .light
-    @State var isPresented = false
+    @State var isPiPPresented = false
+    
+    @State var isInfoPresented = false
     
     var body: some View {
         NavigationView {
@@ -57,10 +59,10 @@ struct ContentView: View {
                 }
                 
                 Section {
-                    Button(LocalizedStringKey(isPresented ? "close_picture_in_picture" : "open_picture_in_picture")) {
-                        isPresented.toggle()
+                    Button(LocalizedStringKey(isPiPPresented ? "close_picture_in_picture" : "open_picture_in_picture")) {
+                        isPiPPresented.toggle()
                     }
-                    .pipify(isPresented: $isPresented) {
+                    .pipify(isPresented: $isPiPPresented) {
                         MonitorView(colorScheme: $colorSchemeBinding, downloadSpeed: $downloadSpeed, uploadSpeed: $uploadSpeed, totalReceived: $totalReceived, totalSent: $totalSent)
                             .frame(width: UIScreen.main.bounds.size.width, height: 30)
                             .pipControlsStyle(controlsStyle: 2)
@@ -77,6 +79,13 @@ struct ContentView: View {
                 }
             }
             .navigationTitle(LocalizedStringKey("network_speed_window"))
+            .toolbar {
+                Button {
+                    isInfoPresented.toggle()
+                } label: {
+                    Image(systemName: "info.circle")
+                }
+            }
             .onAppear {
                 colorSchemeBinding = colorScheme
                 if !isStarted {
@@ -93,6 +102,9 @@ struct ContentView: View {
             }
             .onChange(of: colorScheme) { colorScheme in
                 colorSchemeBinding = colorScheme
+            }
+            .sheet(isPresented: $isInfoPresented) {
+                AboutView()
             }
         }
     }
