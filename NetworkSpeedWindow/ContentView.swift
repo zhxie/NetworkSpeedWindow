@@ -103,6 +103,13 @@ struct ContentView: View {
             .onChange(of: colorScheme) { colorScheme in
                 colorSchemeBinding = colorScheme
             }
+            .onOpenURL { url in
+                if url.host() == "pip" {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        isPiPPresented = true
+                    }
+                }
+            }
             .sheet(isPresented: $isInfoPresented) {
                 AboutView()
             }

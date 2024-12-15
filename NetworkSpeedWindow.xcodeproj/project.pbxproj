@@ -16,10 +16,42 @@
 		E4399F252CEA282A004FC4C1 /* NetworkSpeedMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4399F242CEA282A004FC4C1 /* NetworkSpeedMonitor.swift */; };
 		E4399F2B2CEAF3A9004FC4C1 /* MonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4399F2A2CEAF3A9004FC4C1 /* MonitorView.swift */; };
 		E4399F362CEB3652004FC4C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4399F342CEB3652004FC4C1 /* Localizable.strings */; };
+		E45E97A12D0F0C7F00B98D19 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45E97A02D0F0C7F00B98D19 /* WidgetKit.framework */; };
+		E45E97A32D0F0C7F00B98D19 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45E97A22D0F0C7F00B98D19 /* SwiftUI.framework */; };
+		E45E97B02D0F0C8000B98D19 /* NetworkSpeedWindowWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E45E979F2D0F0C7F00B98D19 /* NetworkSpeedWindowWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E45E97BC2D0F0CCC00B98D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45E97B62D0F0CCC00B98D19 /* Assets.xcassets */; };
+		E45E97BF2D0F0CCC00B98D19 /* NetworkSpeedWindowWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E97B92D0F0CCC00B98D19 /* NetworkSpeedWindowWidgetBundle.swift */; };
+		E45E97C02D0F0CCC00B98D19 /* OpenNetworkSpeedWindowControlWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E97BA2D0F0CCC00B98D19 /* OpenNetworkSpeedWindowControlWidget.swift */; };
+		E45E97C32D0F136100B98D19 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E45E97C12D0F136100B98D19 /* Localizable.strings */; };
+		E45E97C92D0F308800B98D19 /* OpenNetworkSpeedWindowControlWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E97BA2D0F0CCC00B98D19 /* OpenNetworkSpeedWindowControlWidget.swift */; };
 		E480AD3E2CEB3BCE00FD21E4 /* swiftui-pipify in Resources */ = {isa = PBXBuildFile; fileRef = E480AD3D2CEB3BCE00FD21E4 /* swiftui-pipify */; };
 		E480AD402CEB3BDA00FD21E4 /* Pipify in Frameworks */ = {isa = PBXBuildFile; productRef = E480AD3F2CEB3BDA00FD21E4 /* Pipify */; };
 		E480AD432CEB3C1300FD21E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E480AD412CEB3C1300FD21E4 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E45E97AE2D0F0C8000B98D19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4399F0A2CEA26A0004FC4C1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E45E979E2D0F0C7F00B98D19;
+			remoteInfo = NetworkSpeedWindowWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E45E97B12D0F0C8000B98D19 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E45E97B02D0F0C8000B98D19 /* NetworkSpeedWindowWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E41835A42CF1C0FB007215E3 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -34,6 +66,15 @@
 		E4399F2A2CEAF3A9004FC4C1 /* MonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorView.swift; sourceTree = "<group>"; };
 		E4399F352CEB3652004FC4C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E4399F372CEB371D004FC4C1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E45E979F2D0F0C7F00B98D19 /* NetworkSpeedWindowWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NetworkSpeedWindowWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E45E97A02D0F0C7F00B98D19 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		E45E97A22D0F0C7F00B98D19 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		E45E97B62D0F0CCC00B98D19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E45E97B72D0F0CCC00B98D19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E45E97B92D0F0CCC00B98D19 /* NetworkSpeedWindowWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpeedWindowWidgetBundle.swift; sourceTree = "<group>"; };
+		E45E97BA2D0F0CCC00B98D19 /* OpenNetworkSpeedWindowControlWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenNetworkSpeedWindowControlWidget.swift; sourceTree = "<group>"; };
+		E45E97C22D0F136100B98D19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E45E97C42D0F217600B98D19 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E480AD3D2CEB3BCE00FD21E4 /* swiftui-pipify */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "swiftui-pipify"; sourceTree = "<group>"; };
 		E480AD422CEB3C1300FD21E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E480AD442CEB3C1F00FD21E4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -45,6 +86,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E480AD402CEB3BDA00FD21E4 /* Pipify in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45E979C2D0F0C7F00B98D19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E45E97A32D0F0C7F00B98D19 /* SwiftUI.framework in Frameworks */,
+				E45E97A12D0F0C7F00B98D19 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				E4399F142CEA26A0004FC4C1 /* NetworkSpeedWindow */,
+				E45E97BB2D0F0CCC00B98D19 /* NetworkSpeedWindowWidget */,
 				E480AD3D2CEB3BCE00FD21E4 /* swiftui-pipify */,
 				E4399F132CEA26A0004FC4C1 /* Products */,
 				E4399F312CEB31F2004FC4C1 /* Frameworks */,
@@ -82,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				E4399F122CEA26A0004FC4C1 /* NetworkSpeedWindow.app */,
+				E45E979F2D0F0C7F00B98D19 /* NetworkSpeedWindowWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,8 +166,22 @@
 		E4399F312CEB31F2004FC4C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E45E97A02D0F0C7F00B98D19 /* WidgetKit.framework */,
+				E45E97A22D0F0C7F00B98D19 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E45E97BB2D0F0CCC00B98D19 /* NetworkSpeedWindowWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E45E97B92D0F0CCC00B98D19 /* NetworkSpeedWindowWidgetBundle.swift */,
+				E45E97BA2D0F0CCC00B98D19 /* OpenNetworkSpeedWindowControlWidget.swift */,
+				E45E97B62D0F0CCC00B98D19 /* Assets.xcassets */,
+				E45E97B72D0F0CCC00B98D19 /* Info.plist */,
+				E45E97C12D0F136100B98D19 /* Localizable.strings */,
+			);
+			path = NetworkSpeedWindowWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,10 +194,12 @@
 				E4399F0E2CEA26A0004FC4C1 /* Sources */,
 				E4399F0F2CEA26A0004FC4C1 /* Frameworks */,
 				E4399F102CEA26A0004FC4C1 /* Resources */,
+				E45E97B12D0F0C8000B98D19 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E45E97AF2D0F0C8000B98D19 /* PBXTargetDependency */,
 			);
 			name = NetworkSpeedWindow;
 			packageProductDependencies = (
@@ -141,6 +209,25 @@
 			productReference = E4399F122CEA26A0004FC4C1 /* NetworkSpeedWindow.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E45E979E2D0F0C7F00B98D19 /* NetworkSpeedWindowWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E45E97B52D0F0C8000B98D19 /* Build configuration list for PBXNativeTarget "NetworkSpeedWindowWidgetExtension" */;
+			buildPhases = (
+				E45E979B2D0F0C7F00B98D19 /* Sources */,
+				E45E979C2D0F0C7F00B98D19 /* Frameworks */,
+				E45E979D2D0F0C7F00B98D19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetworkSpeedWindowWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = NetworkSpeedWindowWidgetExtension;
+			productReference = E45E979F2D0F0C7F00B98D19 /* NetworkSpeedWindowWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -148,11 +235,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					E4399F112CEA26A0004FC4C1 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					E45E979E2D0F0C7F00B98D19 = {
+						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
@@ -167,12 +257,14 @@
 			);
 			mainGroup = E4399F092CEA26A0004FC4C1;
 			packageReferences = (
+				E45E97C82D0F306A00B98D19 /* XCRemoteSwiftPackageReference "swiftui-pipify" */,
 			);
 			productRefGroup = E4399F132CEA26A0004FC4C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				E4399F112CEA26A0004FC4C1 /* NetworkSpeedWindow */,
+				E45E979E2D0F0C7F00B98D19 /* NetworkSpeedWindowWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -190,6 +282,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E45E979D2D0F0C7F00B98D19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E45E97BC2D0F0CCC00B98D19 /* Assets.xcassets in Resources */,
+				E45E97C32D0F136100B98D19 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -202,11 +303,29 @@
 				E4399F162CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift in Sources */,
 				E4399F2B2CEAF3A9004FC4C1 /* MonitorView.swift in Sources */,
 				E41835A72CF1C1AA007215E3 /* SafariView.swift in Sources */,
+				E45E97C92D0F308800B98D19 /* OpenNetworkSpeedWindowControlWidget.swift in Sources */,
 				E41835A52CF1C0FB007215E3 /* AboutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E45E979B2D0F0C7F00B98D19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E45E97BF2D0F0CCC00B98D19 /* NetworkSpeedWindowWidgetBundle.swift in Sources */,
+				E45E97C02D0F0CCC00B98D19 /* OpenNetworkSpeedWindowControlWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E45E97AF2D0F0C8000B98D19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E45E979E2D0F0C7F00B98D19 /* NetworkSpeedWindowWidgetExtension */;
+			targetProxy = E45E97AE2D0F0C8000B98D19 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E4399F342CEB3652004FC4C1 /* Localizable.strings */ = {
@@ -214,6 +333,15 @@
 			children = (
 				E4399F352CEB3652004FC4C1 /* en */,
 				E4399F372CEB371D004FC4C1 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		E45E97C12D0F136100B98D19 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E45E97C22D0F136100B98D19 /* en */,
+				E45E97C42D0F217600B98D19 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -426,6 +554,65 @@
 			};
 			name = Release;
 		};
+		E45E97B22D0F0C8000B98D19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = PSXQUH2HR6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NetworkSpeedWindowWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NetworkSpeedWindowWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.NetworkSpeedWindow.NetworkSpeedWindowWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E45E97B32D0F0C8000B98D19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = PSXQUH2HR6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NetworkSpeedWindowWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NetworkSpeedWindowWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.NetworkSpeedWindow.NetworkSpeedWindowWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -447,7 +634,27 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		E45E97B52D0F0C8000B98D19 /* Build configuration list for PBXNativeTarget "NetworkSpeedWindowWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E45E97B22D0F0C8000B98D19 /* Debug */,
+				E45E97B32D0F0C8000B98D19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E45E97C82D0F306A00B98D19 /* XCRemoteSwiftPackageReference "swiftui-pipify" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsidetrack/swiftui-pipify.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		E480AD3F2CEB3BDA00FD21E4 /* Pipify */ = {

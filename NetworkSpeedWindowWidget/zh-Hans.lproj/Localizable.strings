@@ -1,0 +1,7 @@
+"window" = "窗口";
+"network_speed" = "网速";
+"open_window" = "打开窗口";
+"open_window_description" = "打开一个画中画窗口";
+
+"open_network_speed_window" = "打开网速窗";
+"open_network_speed_window_description" = "以画中画模式打开网速窗";
