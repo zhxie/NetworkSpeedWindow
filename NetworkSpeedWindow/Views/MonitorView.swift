@@ -76,9 +76,9 @@ struct MonitorView: View {
                         }
                     case .time:
                         HStack {
+                            Spacer()
                             Image(systemName: "clock")
                                 .foregroundStyle(.tint)
-                            Spacer()
                             Text(time.timeFormatted)
                                 .monospaced()
                                 .lineLimit(1)
