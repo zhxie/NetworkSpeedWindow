@@ -13,6 +13,7 @@
 "secondary_indicator" = "次要指标";
 "throughput" = "吞吐量";
 // "interface" = "接口";
+"time" = "时间";
 
 "open_picture_in_picture" = "启动画中画";
 "close_picture_in_picture" = "关闭画中画";

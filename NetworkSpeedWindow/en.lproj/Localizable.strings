@@ -13,6 +13,7 @@
 "secondary_indicator" = "Secondary Indicator";
 "throughput" = "Throughput";
 // "interface" = "Interface";
+"time" = "Time";
 
 "open_picture_in_picture" = "Open Picture-in-Picture";
 "close_picture_in_picture" = "Close Picture-in-Picture";

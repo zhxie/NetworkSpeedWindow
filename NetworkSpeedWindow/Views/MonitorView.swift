@@ -11,6 +11,7 @@ struct MonitorView: View {
     @Binding var totalSent: UInt64
     @Binding var ethernet: UInt64
     @Binding var cellular: UInt64
+    @Binding var time: Date
     
     var body: some View {
         HStack {
@@ -73,6 +74,16 @@ struct MonitorView: View {
                                     .foregroundStyle(foreground)
                             }
                         }
+                    case .time:
+                        HStack {
+                            Image(systemName: "clock")
+                                .foregroundStyle(.tint)
+                            Spacer()
+                            Text(time.timeFormatted)
+                                .monospaced()
+                                .lineLimit(1)
+                                .foregroundStyle(foreground)
+                        }
                     }
                 }
                 .font(.caption2)
@@ -91,5 +102,5 @@ struct MonitorView: View {
 }
 
 #Preview {
-    MonitorView(secondaryIndicator: .constant(.throughput), colorScheme: .constant(.light), downloadSpeed: .constant(999), uploadSpeed: .constant(999_999_999_999), totalReceived: .constant(999_999), totalSent: .constant(999_999_999_999_999), ethernet: .constant(999_999_999), cellular: .constant(999_999_999_999_999_999))
+    MonitorView(secondaryIndicator: .constant(.throughput), colorScheme: .constant(.light), downloadSpeed: .constant(999), uploadSpeed: .constant(999_999_999_999), totalReceived: .constant(999_999), totalSent: .constant(999_999_999_999_999), ethernet: .constant(999_999_999), cellular: .constant(999_999_999_999_999_999), time: .constant(.now))
 }

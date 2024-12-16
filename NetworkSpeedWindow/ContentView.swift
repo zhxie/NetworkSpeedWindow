@@ -5,6 +5,7 @@ struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     
     let monitor = NetworkSpeedMonitor()
+    let timer = Timer.publish(every: 0.001, on: .main, in: .common).autoconnect()
     
     @State var selectedSecondaryIndicator: Indicator = .throughput
     
@@ -15,6 +16,8 @@ struct ContentView: View {
     @State var ethernet: UInt64 = 0
     @State var cellular: UInt64 = 0
     @State var isStarted = false
+    
+    @State var time = Date()
     
     @State var colorSchemeBinding: ColorScheme = .light
     @State var isPiPPresented = false
@@ -73,7 +76,7 @@ struct ContentView: View {
                         isPiPPresented.toggle()
                     }
                     .pipify(isPresented: $isPiPPresented) {
-                        MonitorView(secondaryIndicator: $selectedSecondaryIndicator, colorScheme: $colorSchemeBinding, downloadSpeed: $downloadSpeed, uploadSpeed: $uploadSpeed, totalReceived: $totalReceived, totalSent: $totalSent, ethernet: $ethernet, cellular: $cellular)
+                        MonitorView(secondaryIndicator: $selectedSecondaryIndicator, colorScheme: $colorSchemeBinding, downloadSpeed: $downloadSpeed, uploadSpeed: $uploadSpeed, totalReceived: $totalReceived, totalSent: $totalSent, ethernet: $ethernet, cellular: $cellular, time: $time)
                             .frame(width: UIScreen.main.bounds.size.width, height: 30)
                             .pipControlsStyle(controlsStyle: 2)
                     }
@@ -119,6 +122,9 @@ struct ContentView: View {
                         isPiPPresented = true
                     }
                 }
+            }
+            .onReceive(timer) { _ in
+                time = Date()
             }
             .sheet(isPresented: $isInfoPresented) {
                 AboutView()
