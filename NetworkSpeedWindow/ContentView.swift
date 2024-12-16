@@ -6,6 +6,8 @@ struct ContentView: View {
     
     let monitor = NetworkSpeedMonitor()
     
+    @State var selectedSecondaryIndicator: Indicator = .throughput
+    
     @State var downloadSpeed: Double = 0
     @State var uploadSpeed: Double = 0
     @State var totalReceived: UInt64 = 0
@@ -59,11 +61,19 @@ struct ContentView: View {
                 }
                 
                 Section {
+                    HStack {
+                        Picker("secondary_indicator", selection: $selectedSecondaryIndicator) {
+                            ForEach(Indicator.allCases) { indicator in
+                                Text(LocalizedStringKey(indicator.rawValue))
+                                    .tag(indicator)
+                            }
+                        }
+                    }
                     Button(LocalizedStringKey(isPiPPresented ? "close_picture_in_picture" : "open_picture_in_picture")) {
                         isPiPPresented.toggle()
                     }
                     .pipify(isPresented: $isPiPPresented) {
-                        MonitorView(colorScheme: $colorSchemeBinding, downloadSpeed: $downloadSpeed, uploadSpeed: $uploadSpeed, totalReceived: $totalReceived, totalSent: $totalSent)
+                        MonitorView(secondaryIndicator: $selectedSecondaryIndicator, colorScheme: $colorSchemeBinding, downloadSpeed: $downloadSpeed, uploadSpeed: $uploadSpeed, totalReceived: $totalReceived, totalSent: $totalSent, ethernet: $ethernet, cellular: $cellular)
                             .frame(width: UIScreen.main.bounds.size.width, height: 30)
                             .pipControlsStyle(controlsStyle: 2)
                     }

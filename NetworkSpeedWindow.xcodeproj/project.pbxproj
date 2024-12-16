@@ -25,6 +25,7 @@
 		E45E97C32D0F136100B98D19 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E45E97C12D0F136100B98D19 /* Localizable.strings */; };
 		E45E97C92D0F308800B98D19 /* OpenNetworkSpeedWindowControlWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E97BA2D0F0CCC00B98D19 /* OpenNetworkSpeedWindowControlWidget.swift */; };
 		E45E97CB2D0FC32C00B98D19 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E97CA2D0FC32A00B98D19 /* Number.swift */; };
+		E45E97CF2D0FD04D00B98D19 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E97CE2D0FD04A00B98D19 /* Indicator.swift */; };
 		E480AD3E2CEB3BCE00FD21E4 /* swiftui-pipify in Resources */ = {isa = PBXBuildFile; fileRef = E480AD3D2CEB3BCE00FD21E4 /* swiftui-pipify */; };
 		E480AD402CEB3BDA00FD21E4 /* Pipify in Frameworks */ = {isa = PBXBuildFile; productRef = E480AD3F2CEB3BDA00FD21E4 /* Pipify */; };
 		E480AD432CEB3C1300FD21E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E480AD412CEB3C1300FD21E4 /* InfoPlist.strings */; };
@@ -77,6 +78,7 @@
 		E45E97C22D0F136100B98D19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E45E97C42D0F217600B98D19 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E45E97CA2D0FC32A00B98D19 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		E45E97CE2D0FD04A00B98D19 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		E480AD3D2CEB3BCE00FD21E4 /* swiftui-pipify */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "swiftui-pipify"; sourceTree = "<group>"; };
 		E480AD422CEB3C1300FD21E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E480AD442CEB3C1F00FD21E4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		E4399F142CEA26A0004FC4C1 /* NetworkSpeedWindow */ = {
 			isa = PBXGroup;
 			children = (
+				E45E97CD2D0FD04600B98D19 /* Models */,
 				E41835A92CF1C397007215E3 /* Utils */,
 				E41835A82CF1C37F007215E3 /* Views */,
 				E4399F152CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift */,
@@ -185,6 +188,14 @@
 				E45E97C12D0F136100B98D19 /* Localizable.strings */,
 			);
 			path = NetworkSpeedWindowWidget;
+			sourceTree = "<group>";
+		};
+		E45E97CD2D0FD04600B98D19 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E45E97CE2D0FD04A00B98D19 /* Indicator.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +319,7 @@
 				E4399F2B2CEAF3A9004FC4C1 /* MonitorView.swift in Sources */,
 				E41835A72CF1C1AA007215E3 /* SafariView.swift in Sources */,
 				E45E97C92D0F308800B98D19 /* OpenNetworkSpeedWindowControlWidget.swift in Sources */,
+				E45E97CF2D0FD04D00B98D19 /* Indicator.swift in Sources */,
 				E41835A52CF1C0FB007215E3 /* AboutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
