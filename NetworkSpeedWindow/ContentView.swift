@@ -5,7 +5,7 @@ struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     
     let monitor = NetworkSpeedMonitor()
-    let timer = Timer.publish(every: 0.001, on: .main, in: .common).autoconnect()
+    @State var timer: Timer? = nil
     
     @State var selectedSecondaryIndicator: Indicator = .throughput
     
@@ -116,15 +116,21 @@ struct ContentView: View {
             .onChange(of: colorScheme) { colorScheme in
                 colorSchemeBinding = colorScheme
             }
+            .onChange(of: selectedSecondaryIndicator) { secondaryIndicator in
+                timer?.invalidate()
+                timer = nil
+                if secondaryIndicator == .time {
+                    timer = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true) { _ in
+                        time = Date()
+                    }
+                }
+            }
             .onOpenURL { url in
                 if url.host() == "pip" {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         isPiPPresented = true
                     }
                 }
-            }
-            .onReceive(timer) { _ in
-                time = Date()
             }
             .sheet(isPresented: $isInfoPresented) {
                 AboutView()
