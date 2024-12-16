@@ -120,7 +120,7 @@ struct ContentView: View {
                 timer?.invalidate()
                 timer = nil
                 if secondaryIndicator == .time {
-                    timer = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true) { _ in
+                    timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
                         time = Date()
                     }
                 }
