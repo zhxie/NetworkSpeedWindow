@@ -39,7 +39,12 @@ class NetworkSpeedMonitor {
             previousCellularReceived = data.cellularReceived
             previousCellularSent = data.cellularSent
             
+#if targetEnvironment(simulator)
+            // Used for screenshots only.
+            update(126 * 1024, 91 * 1024, UInt64(77.52 * 1024 * 1024), UInt64(86.66 * 1024 * 1024), UInt64(158.08 * 1024 * 1024), UInt64(6.1 * 1024 * 1024))
+#else
             update(downloadSpeed, uploadSpeed, totalEthernetReceived + totalCellularReceived, totalEthernetSent + totalCellularSent, totalEthernetReceived + totalEthernetSent, totalCellularReceived + totalCellularSent)
+#endif
         }
     }
     func stopMonitoring() {

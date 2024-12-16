@@ -136,6 +136,7 @@ struct ContentView: View {
                 AboutView()
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 
