@@ -23,7 +23,7 @@ struct OpenNetworkSpeedWindowControlWidget: ControlWidget {
             kind: "name.sketch.NetworkSpeedWindow.OpenNetworkSpeedWindowControlWidget"
         ) {
             ControlWidgetButton(action: OpenNetworkSpeedWindowIntent()) {
-                Image(systemName: "gauge.with.needle")
+                Image("network.badge.gauge.with.needle.fill")
             }
         }
         .displayName("open_network_speed_window")
