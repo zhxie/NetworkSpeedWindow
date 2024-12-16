@@ -4,10 +4,10 @@ struct MonitorView: View {
     // HACK: We have to use bindings for Pipify.
     @Binding var colorScheme: ColorScheme
     
-    @Binding var downloadSpeed: String
-    @Binding var uploadSpeed: String
-    @Binding var totalReceived: String
-    @Binding var totalSent: String
+    @Binding var downloadSpeed: Double
+    @Binding var uploadSpeed: Double
+    @Binding var totalReceived: UInt64
+    @Binding var totalSent: UInt64
     
     var body: some View {
         HStack {
@@ -17,7 +17,7 @@ struct MonitorView: View {
                         Image(systemName: "arrow.down")
                             .foregroundStyle(.tint)
                         Spacer()
-                        Text(downloadSpeed)
+                        Text(downloadSpeed.speed)
                             .lineLimit(1)
                             .foregroundStyle(foreground)
                     }
@@ -25,7 +25,7 @@ struct MonitorView: View {
                         Image(systemName: "arrow.up")
                             .foregroundStyle(.tint)
                         Spacer()
-                        Text(uploadSpeed)
+                        Text(uploadSpeed.speed)
                             .lineLimit(1)
                             .foregroundStyle(foreground)
                     }
@@ -33,7 +33,7 @@ struct MonitorView: View {
                         Image(systemName: "arrow.down.circle")
                             .foregroundStyle(.tint)
                         Spacer()
-                        Text(totalReceived)
+                        Text(totalReceived.throughput)
                             .lineLimit(1)
                             .foregroundStyle(foreground)
                     }
@@ -41,7 +41,7 @@ struct MonitorView: View {
                         Image(systemName: "arrow.up.circle")
                             .foregroundStyle(.tint)
                         Spacer()
-                        Text(totalSent)
+                        Text(totalSent.throughput)
                             .lineLimit(1)
                             .foregroundStyle(foreground)
                     }
@@ -62,5 +62,5 @@ struct MonitorView: View {
 }
 
 #Preview {
-    MonitorView(colorScheme: .constant(.light), downloadSpeed: .constant("999.9 TB/s"), uploadSpeed: .constant("999.9 TB/s"), totalReceived: .constant("9999.9 TB"), totalSent: .constant("9999.9 TB"))
+    MonitorView(colorScheme: .constant(.light), downloadSpeed: .constant(999), uploadSpeed: .constant(999_999_999_999), totalReceived: .constant(999_999), totalSent: .constant(9_999_999_999_999_999))
 }
