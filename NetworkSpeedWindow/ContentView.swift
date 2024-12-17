@@ -3,20 +3,18 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
+    @State var colorSchemeBinding: ColorScheme = .light
     
     let monitor = NetworkSpeedMonitor()
-    @State var timer: Timer? = nil
-    
-    @State var selectedSecondaryIndicator: Indicator = .throughput
-    
     @State var metrics = Metrics()
+    @State var laps: [(Date, Metrics)] = []
     @State var isStarted = false
     
+    @State var timer: Timer? = nil
     @State var time = Date()
     
-    @State var colorSchemeBinding: ColorScheme = .light
+    @State var selectedSecondaryIndicator: Indicator = .throughput
     @State var isPiPPresented = false
-    
     @State var isInfoPresented = false
     
     var body: some View {
@@ -75,9 +73,39 @@ struct ContentView: View {
                             .frame(width: UIScreen.main.bounds.size.width, height: 30)
                             .pipControlsStyle(controlsStyle: 2)
                     }
-                    Button(LocalizedStringKey("reset")) {
+                    Button(LocalizedStringKey("lap")) {
+                        withAnimation {
+                            laps.insert((Date.now, metrics), at: 0)
+                        }
+                    }
+                    Button(LocalizedStringKey("reset"), role: .destructive) {
                         monitor.reset()
                         metrics = Metrics()
+                        // HACK: avoid animation penetrated to texts above.
+                        DispatchQueue.main.asyncAfter(deadline: .now()) {
+                            withAnimation {
+                                laps.removeAll()
+                            }
+                        }
+                    }
+                }
+                
+                if !laps.isEmpty {
+                    Section(LocalizedStringKey("laps")) {
+                        List(laps, id: \.0) { lap in
+                            LapView(time: lap.0, metrics: lap.1)
+                                .swipeActions {
+                                    Button(role: .destructive) {
+                                        withAnimation {
+                                            laps.removeAll { (date, _) in
+                                                date == lap.0
+                                            }
+                                        }
+                                    } label: {
+                                        Image(systemName: "trash.fill")
+                                    }
+                                }
+                        }
                     }
                 }
             }

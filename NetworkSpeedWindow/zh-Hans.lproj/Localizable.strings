@@ -17,7 +17,10 @@
 
 "open_picture_in_picture" = "启动画中画";
 "close_picture_in_picture" = "关闭画中画";
+"lap" = "分段";
 "reset" = "重置";
+
+"laps" = "分段";
 
 "about" = "关于";
 "version" = "版本";
