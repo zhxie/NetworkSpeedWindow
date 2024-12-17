@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4099C5B2D110F0100FFF1B0 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4099C5A2D110EDD00FFF1B0 /* Metrics.swift */; };
 		E41835A52CF1C0FB007215E3 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41835A42CF1C0FB007215E3 /* AboutView.swift */; };
 		E41835A72CF1C1AA007215E3 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41835A62CF1C1AA007215E3 /* SafariView.swift */; };
 		E4399F162CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4399F152CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E4099C5A2D110EDD00FFF1B0 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		E41835A42CF1C0FB007215E3 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		E41835A62CF1C1AA007215E3 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		E4399F122CEA26A0004FC4C1 /* NetworkSpeedWindow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkSpeedWindow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +199,7 @@
 			children = (
 				E45E97D02D0FD2F400B98D19 /* Date.swift */,
 				E45E97CE2D0FD04A00B98D19 /* Indicator.swift */,
+				E4099C5A2D110EDD00FFF1B0 /* Metrics.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			files = (
 				E4399F252CEA282A004FC4C1 /* NetworkSpeedMonitor.swift in Sources */,
 				E45E97D12D0FD2F500B98D19 /* Date.swift in Sources */,
+				E4099C5B2D110F0100FFF1B0 /* Metrics.swift in Sources */,
 				E4399F182CEA26A0004FC4C1 /* ContentView.swift in Sources */,
 				E45E97CB2D0FC32C00B98D19 /* Number.swift in Sources */,
 				E4399F162CEA26A0004FC4C1 /* NetworkSpeedWindowApp.swift in Sources */,

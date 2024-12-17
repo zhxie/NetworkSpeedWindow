@@ -5,12 +5,7 @@ struct MonitorView: View {
     // HACK: We have to use bindings for Pipify.
     @Binding var colorScheme: ColorScheme
     
-    @Binding var downloadSpeed: Double
-    @Binding var uploadSpeed: Double
-    @Binding var totalReceived: UInt64
-    @Binding var totalSent: UInt64
-    @Binding var ethernet: UInt64
-    @Binding var cellular: UInt64
+    @Binding var metrics: Metrics
     @Binding var time: Date
     
     var body: some View {
@@ -22,7 +17,7 @@ struct MonitorView: View {
                             Image(systemName: "arrow.down")
                                 .foregroundStyle(.tint)
                             Spacer()
-                            Text(downloadSpeed.speed)
+                            Text(metrics.downloadSpeed.speed)
                                 .lineLimit(1)
                                 .foregroundStyle(foreground)
                         }
@@ -30,7 +25,7 @@ struct MonitorView: View {
                             Image(systemName: "arrow.up")
                                 .foregroundStyle(.tint)
                             Spacer()
-                            Text(uploadSpeed.speed)
+                            Text(metrics.uploadSpeed.speed)
                                 .lineLimit(1)
                                 .foregroundStyle(foreground)
                         }
@@ -42,7 +37,7 @@ struct MonitorView: View {
                                 Image(systemName: "arrow.down.circle")
                                     .foregroundStyle(.tint)
                                 Spacer()
-                                Text(totalReceived.throughput)
+                                Text(metrics.totalReceived.throughput)
                                     .lineLimit(1)
                                     .foregroundStyle(foreground)
                             }
@@ -50,7 +45,7 @@ struct MonitorView: View {
                                 Image(systemName: "arrow.up.circle")
                                     .foregroundStyle(.tint)
                                 Spacer()
-                                Text(totalSent.throughput)
+                                Text(metrics.totalSent.throughput)
                                     .lineLimit(1)
                                     .foregroundStyle(foreground)
                             }
@@ -61,7 +56,7 @@ struct MonitorView: View {
                                 Image(systemName: "wifi")
                                     .foregroundStyle(.tint)
                                 Spacer()
-                                Text(ethernet.throughput)
+                                Text(metrics.ethernet.throughput)
                                     .lineLimit(1)
                                     .foregroundStyle(foreground)
                             }
@@ -69,7 +64,7 @@ struct MonitorView: View {
                                 Image(systemName: "antenna.radiowaves.left.and.right")
                                     .foregroundStyle(.tint)
                                 Spacer()
-                                Text(cellular.throughput)
+                                Text(metrics.cellular.throughput)
                                     .lineLimit(1)
                                     .foregroundStyle(foreground)
                             }
@@ -102,5 +97,5 @@ struct MonitorView: View {
 }
 
 #Preview {
-    MonitorView(secondaryIndicator: .constant(.throughput), colorScheme: .constant(.light), downloadSpeed: .constant(999), uploadSpeed: .constant(999_999_999_999), totalReceived: .constant(999_999), totalSent: .constant(999_999_999_999_999), ethernet: .constant(999_999_999), cellular: .constant(999_999_999_999_999_999), time: .constant(.now))
+    MonitorView(secondaryIndicator: .constant(.throughput), colorScheme: .constant(.light), metrics: .constant(Metrics(downloadSpeed: 999, uploadSpeed: 999_999_999_999, totalReceived: 999_999, totalSent: 999_999_999_999_999, ethernet: 999_999_999, cellular: 999_999_999_999_999_999)), time: .constant(.now))
 }

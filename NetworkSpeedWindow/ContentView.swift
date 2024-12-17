@@ -9,12 +9,7 @@ struct ContentView: View {
     
     @State var selectedSecondaryIndicator: Indicator = .throughput
     
-    @State var downloadSpeed: Double = 0
-    @State var uploadSpeed: Double = 0
-    @State var totalReceived: UInt64 = 0
-    @State var totalSent: UInt64 = 0
-    @State var ethernet: UInt64 = 0
-    @State var cellular: UInt64 = 0
+    @State var metrics = Metrics()
     @State var isStarted = false
     
     @State var time = Date()
@@ -31,22 +26,22 @@ struct ContentView: View {
                     HStack {
                         Text(LocalizedStringKey("download_speed"))
                         Spacer()
-                        Text(downloadSpeed.speed)
+                        Text(metrics.downloadSpeed.speed)
                     }
                     HStack {
                         Text(LocalizedStringKey("upload_speed"))
                         Spacer()
-                        Text(uploadSpeed.speed)
+                        Text(metrics.uploadSpeed.speed)
                     }
                     HStack {
                         Text(LocalizedStringKey("total_received"))
                         Spacer()
-                        Text(totalReceived.throughput)
+                        Text(metrics.totalReceived.throughput)
                     }
                     HStack {
                         Text(LocalizedStringKey("total_sent"))
                         Spacer()
-                        Text(totalSent.throughput)
+                        Text(metrics.totalSent.throughput)
                     }
                 }
                 
@@ -54,12 +49,12 @@ struct ContentView: View {
                     HStack {
                         Text(LocalizedStringKey("wi_fi_ethernet"))
                         Spacer()
-                        Text(ethernet.throughput)
+                        Text(metrics.ethernet.throughput)
                     }
                     HStack {
                         Text(LocalizedStringKey("cellular"))
                         Spacer()
-                        Text(cellular.throughput)
+                        Text(metrics.cellular.throughput)
                     }
                 }
                 
@@ -76,18 +71,13 @@ struct ContentView: View {
                         isPiPPresented.toggle()
                     }
                     .pipify(isPresented: $isPiPPresented) {
-                        MonitorView(secondaryIndicator: $selectedSecondaryIndicator, colorScheme: $colorSchemeBinding, downloadSpeed: $downloadSpeed, uploadSpeed: $uploadSpeed, totalReceived: $totalReceived, totalSent: $totalSent, ethernet: $ethernet, cellular: $cellular, time: $time)
+                        MonitorView(secondaryIndicator: $selectedSecondaryIndicator, colorScheme: $colorSchemeBinding, metrics: $metrics, time: $time)
                             .frame(width: UIScreen.main.bounds.size.width, height: 30)
                             .pipControlsStyle(controlsStyle: 2)
                     }
                     Button(LocalizedStringKey("reset")) {
                         monitor.reset()
-                        downloadSpeed = 0
-                        uploadSpeed = 0
-                        totalReceived = 0
-                        totalSent = 0
-                        ethernet = 0
-                        cellular = 0
+                        metrics = Metrics()
                     }
                 }
             }
@@ -102,13 +92,8 @@ struct ContentView: View {
             .onAppear {
                 colorSchemeBinding = colorScheme
                 if !isStarted {
-                    monitor.startMonitoring { [self] downloadSpeed, uploadSpeed, totalReceived, totalSent, ethernet, cellular in
-                        self.downloadSpeed = downloadSpeed
-                        self.uploadSpeed = uploadSpeed
-                        self.totalReceived = totalReceived
-                        self.totalSent = totalSent
-                        self.ethernet = ethernet
-                        self.cellular = cellular
+                    monitor.startMonitoring { [self] metrics in
+                        self.metrics = metrics
                     }
                     isStarted = true
                 }

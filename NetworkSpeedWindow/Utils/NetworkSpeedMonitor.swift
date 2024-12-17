@@ -13,7 +13,7 @@ class NetworkSpeedMonitor {
     var totalCellularSent: UInt64 = 0
     var timer: Timer?
 
-    func startMonitoring(interval: TimeInterval = 1.0, update: @escaping (_ downloadSpeed: Double, _ uploadSpeed: Double, _ totalReceived: UInt64, _ totalSent: UInt64, _ ethernet: UInt64, _ cellular: UInt64) -> Void) {
+    func startMonitoring(interval: TimeInterval = 1.0, update: @escaping (_ metrics: Metrics) -> Void) {
         reset()
         
         self.timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { [weak self] _ in
@@ -41,9 +41,9 @@ class NetworkSpeedMonitor {
             
 #if targetEnvironment(simulator)
             // Used for screenshots only.
-            update(126 * 1024, 91 * 1024, UInt64(77.52 * 1024 * 1024), UInt64(86.66 * 1024 * 1024), UInt64(158.08 * 1024 * 1024), UInt64(6.1 * 1024 * 1024))
+            update(Metrics(downloadSpeed: 126 * 1024, uploadSpeed: 91 * 1024, totalReceived: UInt64(77.52 * 1024 * 1024), totalSent: UInt64(86.66 * 1024 * 1024), ethernet: UInt64(158.08 * 1024 * 1024), cellular: UInt64(6.1 * 1024 * 1024)))
 #else
-            update(downloadSpeed, uploadSpeed, totalEthernetReceived + totalCellularReceived, totalEthernetSent + totalCellularSent, totalEthernetReceived + totalEthernetSent, totalCellularReceived + totalCellularSent)
+            update(Metrics(downloadSpeed: downloadSpeed, uploadSpeed: uploadSpeed, totalReceived: totalEthernetReceived + totalCellularReceived, totalSent: totalEthernetSent + totalCellularSent, ethernet: totalEthernetReceived + totalEthernetSent, cellular: totalCellularReceived + totalCellularSent))
 #endif
         }
     }
