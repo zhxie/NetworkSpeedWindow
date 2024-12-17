@@ -15,6 +15,11 @@
 // "interface" = "Interface";
 "time" = "Time";
 
+"sound_effect" = "Sound Effect";
+"none" = "None";
+"every_second" = "Every Second";
+"every_minute" = "Every Minute";
+
 "open_picture_in_picture" = "Open Picture-in-Picture";
 "close_picture_in_picture" = "Close Picture-in-Picture";
 "lap" = "Lap";

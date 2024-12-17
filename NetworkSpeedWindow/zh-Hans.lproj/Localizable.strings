@@ -15,6 +15,11 @@
 // "interface" = "接口";
 "time" = "时间";
 
+"sound_effect" = "声音效果";
+"none" = "无";
+"every_second" = "每秒";
+"every_minute" = "每分钟";
+
 "open_picture_in_picture" = "启动画中画";
 "close_picture_in_picture" = "关闭画中画";
 "lap" = "分段";

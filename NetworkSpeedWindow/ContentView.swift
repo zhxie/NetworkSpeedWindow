@@ -1,3 +1,4 @@
+import AVFoundation
 import Pipify
 import SwiftUI
 
@@ -10,10 +11,12 @@ struct ContentView: View {
     @State var laps: [(Date, Metrics)] = []
     @State var isStarted = false
     
+    @State var audioPlayer: AVAudioPlayer? = nil
     @State var timer: Timer? = nil
-    @State var time = Date()
+    @State var time = Date.now
     
-    @State var selectedSecondaryIndicator: Indicator = .throughput
+    @State var secondaryIndicator: Indicator = .throughput
+    @State var soundEffect: SoundEffect? = nil
     @State var isPiPPresented = false
     @State var isInfoPresented = false
     
@@ -57,11 +60,17 @@ struct ContentView: View {
                 }
                 
                 Section {
-                    HStack {
-                        Picker("secondary_indicator", selection: $selectedSecondaryIndicator) {
-                            ForEach(Indicator.allCases) { indicator in
-                                Text(LocalizedStringKey(indicator.rawValue))
-                                    .tag(indicator)
+                    Picker("secondary_indicator", selection: $secondaryIndicator) {
+                        ForEach(Indicator.allCases) { indicator in
+                            Text(LocalizedStringKey(indicator.rawValue))
+                                .tag(indicator)
+                        }
+                    }
+                    if soundEffect != nil {
+                        Picker("sound_effect", selection: $soundEffect) {
+                            ForEach(SoundEffect.allCases) { soundEffect in
+                                Text(LocalizedStringKey(soundEffect.rawValue))
+                                    .tag(soundEffect)
                             }
                         }
                     }
@@ -69,7 +78,7 @@ struct ContentView: View {
                         isPiPPresented.toggle()
                     }
                     .pipify(isPresented: $isPiPPresented) {
-                        MonitorView(secondaryIndicator: $selectedSecondaryIndicator, colorScheme: $colorSchemeBinding, metrics: $metrics, time: $time)
+                        MonitorView(secondaryIndicator: $secondaryIndicator, colorScheme: $colorSchemeBinding, metrics: $metrics, time: $time)
                             .frame(width: UIScreen.main.bounds.size.width, height: 30)
                             .pipControlsStyle(controlsStyle: 2)
                     }
@@ -129,12 +138,45 @@ struct ContentView: View {
             .onChange(of: colorScheme) { colorScheme in
                 colorSchemeBinding = colorScheme
             }
-            .onChange(of: selectedSecondaryIndicator) { secondaryIndicator in
+            .onChange(of: secondaryIndicator) { secondaryIndicator in
                 timer?.invalidate()
                 timer = nil
+                time = .now
+                withAnimation {
+                    if secondaryIndicator == .time {
+                        soundEffect = SoundEffect.none
+                    } else {
+                        soundEffect = nil
+                    }
+                }
                 if secondaryIndicator == .time {
+                    if audioPlayer == nil {
+                        let url = Bundle.main.url(forResource: "beep", withExtension: "mp3")!
+                        audioPlayer = try! AVAudioPlayer(contentsOf: url)
+                        audioPlayer?.numberOfLoops = 0
+                        audioPlayer?.prepareToPlay()
+                    }
                     timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
-                        time = Date()
+                        let current = Date.now
+                        if let soundEffect = soundEffect {
+                            switch soundEffect {
+                            case .none:
+                                break
+                            case .everySecond:
+                                if current.second != time.second {
+                                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                                        audioPlayer?.play()
+                                    }
+                                }
+                            case .everyMinute:
+                                if current.minute != time.minute {
+                                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                                        audioPlayer?.play()
+                                    }
+                                }
+                            }
+                        }
+                        time = current
                     }
                 }
             }
